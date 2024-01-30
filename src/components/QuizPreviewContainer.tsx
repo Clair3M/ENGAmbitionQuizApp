@@ -2,9 +2,10 @@ import '../output.css'
 import QuizPreview from './QuizPreview';
 
 function QuizPreviewContainer() {
+    
 
     return (
-        <div className="bg-white border-2 border-solid border-red-400 h-preview-container w-full flex flex-col justify-items-start items-center overflow-auto"> 
+        <div className="bg-whiteh-preview-container w-full flex flex-col justify-items-start items-center overflow-auto"> 
             <QuizPreview />
             <QuizPreview />
             <QuizPreview />
@@ -14,3 +15,5 @@ function QuizPreviewContainer() {
 }
 
 export default QuizPreviewContainer;
+
+// border-2 border-solid border-red-400 
