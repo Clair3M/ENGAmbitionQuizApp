@@ -1,0 +1,9 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    button {
+        @apply border bg-green-200 rounded-lg h-8 w-32 object-center
+    }
+}
