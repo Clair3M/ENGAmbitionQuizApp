@@ -20,5 +20,9 @@
 }
 
 .h-preview-container {
-    height: 40rem;
+    height: (40-70)rem;
+}
+
+h1[id="title"]:hover {
+    @apply drop-shadow-md
 }
