@@ -4,6 +4,21 @@
 
 @layer base {
     button {
-        @apply border bg-green-200 rounded-lg h-8 w-32 object-center
+        @apply bg-green-200 rounded-lg h-8 w-36 font-medium
     }
+    button:hover {
+        @apply bg-green-300
+    }
+}
+
+.max-w-19\/20 {
+    max-width: 95%;
+}
+
+.w-preview {
+    width: 32rem;
+}
+
+.h-preview-container {
+    height: 40rem;
 }
