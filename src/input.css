@@ -26,3 +26,11 @@
 h1[id="title"]:hover {
     @apply drop-shadow-md
 }
+
+.h-42 {
+    height: 10.55rem;
+}
+
+.content-box {
+    @apply bg-gray-50 border-2 border-solid border-gray-400 rounded-3xl p-2 drop-shadow-lg flex flex-col
+}

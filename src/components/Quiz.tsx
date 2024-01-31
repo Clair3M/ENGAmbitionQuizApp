@@ -1,14 +1,9 @@
 import '../output.css'
 
-function Quiz() {
-
+export const Quiz = () => {
     return (
-        <div>
-            <div>
-                
-            </div>
+        <div className='content-box content-center'>
+            hii
         </div>
     );
 }
-
-export default Quiz;
