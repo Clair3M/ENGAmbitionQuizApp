@@ -1,32 +1,61 @@
 export type QuizInfo = {
     title: string;
+    attempted: boolean;
     desc: string;
 }
 
 export type Question = {
-    
-
+    options: string[];
+    answerKey: number;
 };
 
 export class Quiz {
-    constructor(newInfo: QuizInfo, questions: []) {
+    info: QuizInfo;
+    highScore: number;
+    currentQuestion: number;
+    questions: Question[];
+    numQuestions: number;
+    answers: Array<number>;
+
+    constructor(newInfo: QuizInfo, questions: Question[]) {
         this.info = newInfo;
-        this.attempted = false;
         this.highScore = 0.0;
+        this.currentQuestion = 0;
         this.questions = questions;
+        this.numQuestions = questions.length;
+        this.answers = new Array<number>(this.numQuestions);
     }    
 
-    setHighScore(newHighScore) {
-        this.getHighScore = newHighScore;
-    }
-
-    getAttempted() {
-        return this.attempted;
+    getInfo() {
+        return this.info;
     }
 
     getHighScore() {
         return this.highScore;
     }
 
-    
+    answerQuestion(answer: number) {
+        this.answers[this.currentQuestion] = answer;
+    }
+
+    getNextQuestion() {
+        this.currentQuestion += 1;
+        return this.questions[this.currentQuestion].options;
+    }
+
+    getPreviousQuestion() {
+        this.currentQuestion -= 1;
+        return this.questions[this.currentQuestion].options;
+    }
+
+    finishQuiz() {
+        let correct = 0;
+        this.info.attempted = true;
+        for (let i = 0; i < this.numQuestions; i++) {
+            if (this.questions[i].answerKey == this.answers[i]) {
+                correct++;
+            }
+        }
+        this.highScore = correct / this.numQuestions;
+    }
 };

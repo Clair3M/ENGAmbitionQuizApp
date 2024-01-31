@@ -23,10 +23,6 @@
     height: (40-70)rem;
 }
 
-h1[id="title"]:hover {
-    @apply drop-shadow-md
-}
-
 .h-42 {
     height: 10.55rem;
 }

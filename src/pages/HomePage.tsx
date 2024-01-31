@@ -1,5 +1,11 @@
+import { Header } from '../components/Header'
+import { QuizContainer } from '../components/QuizContainer'
+
 export const HomePage = () => {
     return (
-        <h1>HomePage</h1>
+        <>
+            <Header />
+            <QuizContainer />   
+        </>
     );
 }

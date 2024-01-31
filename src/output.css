@@ -558,6 +558,10 @@ button:hover {
   --tw-backdrop-sepia:  ;
 }
 
+.static {
+  position: static;
+}
+
 .absolute {
   position: absolute;
 }
@@ -584,6 +588,10 @@ button:hover {
   left: 0px;
 }
 
+.top-0 {
+  top: 0px;
+}
+
 .flex {
   display: flex;
 }
@@ -594,6 +602,10 @@ button:hover {
 
 .h-14 {
   height: 3.5rem;
+}
+
+.h-28 {
+  height: 7rem;
 }
 
 .h-auto {
@@ -703,11 +715,6 @@ button:hover {
 
 .h-preview-container {
   height: (40-70)rem;
-}
-
-h1[id="title"]:hover {
-  --tw-drop-shadow: drop-shadow(0 4px 3px rgb(0 0 0 / 0.07)) drop-shadow(0 2px 2px rgb(0 0 0 / 0.06));
-  filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
 }
 
 .h-42 {

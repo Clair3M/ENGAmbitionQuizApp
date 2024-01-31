@@ -1,23 +1,17 @@
 import '../output.css'
 import { QuizPreview } from './QuizPreview'
+import { Quiz, QuizInfo, Question } from '../QuizStructure'
 
-const quizInfo = [
-    {title: 'Test One', desc: 'silly little quiz about silly little guys.'},
-    {title: 'Test Two', desc: 'wowie, this is a goofy one.'},
-    {title: 'Test Three', desc: 'omg, a quizz?? I hope I pass.'},
-    {title: 'Test Four', desc: 'silly little quiz about silly little guys.'},
-    {title: 'Test One', desc: 'silly little quiz about silly little guys.'},
-    {title: 'Test Two', desc: 'wowie, this is a goofy one.'},
-    {title: 'Test Three', desc: 'omg, a quizz?? I hope I pass.'},
-    {title: 'Test Four', desc: 'silly little quiz about silly little guys.'}
-];
+let info: QuizInfo = {title:'Quiz Name', attempted:false, desc:'Silly little quiz about silly little guys'};
+let questions: Question[] = [];
+let quizes: Quiz[] = [new Quiz(info, questions)];
 
 export const QuizContainer =() => {
     return (
-        <div className="bg-white w-full flex flex-col justify-items-start items-center overflow-auto">
-            {quizInfo.map((quiz) => (
-                <QuizPreview title={quiz.title} desc={quiz.desc} />
+        <div className="bg-white w-full flex flex-col justify-items-start items-center inset-y-28 overflow-auto">
+            {quizes.map((quiz) => (
+                <QuizPreview quiz={quiz} />
             ))}
-        </div>
+        </div>  
     );
 }

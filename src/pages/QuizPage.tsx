@@ -1,5 +1,9 @@
+import { Header } from '../components/Header'
+
 export const QuizPage = () => {
     return (
-        <h1>QuizPage</h1>
+        <>
+            <Header />
+        </>
     );
 }
