@@ -1,6 +1,6 @@
 import '../output.css'
 
-export const Quiz = () => {
+export const QuizBox = () => {
     return (
         <div className='content-box content-center'>
             hii

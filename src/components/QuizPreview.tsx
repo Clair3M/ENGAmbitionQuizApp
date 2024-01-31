@@ -1,6 +1,8 @@
 import { Quiz } from '../QuizStructure.tsx'
+import { useNavigate } from "react-router-dom";
+
 import '../output.css'
- 
+
 export const QuizPreview = (props: {quiz: Quiz}) => {
     const info = props.quiz.info;
     let attemptedMessage;
@@ -8,6 +10,11 @@ export const QuizPreview = (props: {quiz: Quiz}) => {
         attemptedMessage = 'Highest Score:' + (props.quiz.getHighScore() * 100).toString() + '%';
     } else {
         attemptedMessage = 'Unattemped';
+    }
+
+    const navigate = useNavigate();
+    const goToQuiz = () => {
+        navigate('quiz');
     }
 
     return (
@@ -19,7 +26,7 @@ export const QuizPreview = (props: {quiz: Quiz}) => {
                     <p className='h-14'>{info.desc}</p>
                 </div>
                 <div className='flex justify-center'>
-                    <button>Start Quiz</button>
+                    <button onClick={goToQuiz}>Start Quiz</button>
                 </div> 
             </div>
         </div>

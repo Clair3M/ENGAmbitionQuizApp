@@ -2,7 +2,7 @@ import '../output.css'
 import { QuizPreview } from './QuizPreview'
 import { Quiz, QuizInfo, Question } from '../QuizStructure'
 
-let info: QuizInfo = {title:'Quiz Name', attempted:false, desc:'Silly little quiz about silly little guys'};
+let info: QuizInfo = {title:'Quiz Name', attempted:false, desc:'Silly little quiz about silly little guys.'};
 let questions: Question[] = [];
 let quizes: Quiz[] = [new Quiz(info, questions)];
 
