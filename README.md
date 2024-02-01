@@ -1,6 +1,6 @@
 # ENG Ambition Quiz App
 
-This is a quiz application created using React and Tailwind CSS as part of the Guelph ENG Ambition application process.
+This is a quiz application created using React and Tailwind CSS as part of the Guelph ENG Ambition application process. u
 
 ## Documentation
 
