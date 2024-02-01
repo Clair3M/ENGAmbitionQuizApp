@@ -5,6 +5,7 @@ export type QuizInfo = {
 }
 
 export type Question = {
+    question: string;
     options: string[];
     answerKey: number;
 };
@@ -40,12 +41,12 @@ export class Quiz {
 
     getNextQuestion() {
         this.currentQuestion += 1;
-        return this.questions[this.currentQuestion].options;
+        return this.questions[this.currentQuestion];
     }
 
     getPreviousQuestion() {
         this.currentQuestion -= 1;
-        return this.questions[this.currentQuestion].options;
+        return this.questions[this.currentQuestion];
     }
 
     finishQuiz() {

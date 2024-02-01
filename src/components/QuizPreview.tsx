@@ -4,17 +4,18 @@ import { useNavigate } from "react-router-dom";
 import '../output.css'
 
 export const QuizPreview = (props: {quiz: Quiz}) => {
-    const info = props.quiz.info;
+    const quiz = props.quiz;
+    const info = quiz.info;
     let attemptedMessage;
     if (info.attempted) {
-        attemptedMessage = 'Highest Score:' + (props.quiz.getHighScore() * 100).toString() + '%';
+        attemptedMessage = 'Best Attempt: ' + (props.quiz.getHighScore() * 100).toString() + '%';
     } else {
         attemptedMessage = 'Unattemped';
     }
 
     const navigate = useNavigate();
     const goToQuiz = () => {
-        navigate('quiz');
+        navigate('quiz', {state: {quiz}});
     }
 
     return (
