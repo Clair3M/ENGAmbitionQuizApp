@@ -1,11 +1,7 @@
-import '../output.css'
+import { quizes } from '../data/Quizes'
 import { QuizPreview } from './QuizPreview'
-import { Quiz, QuizInfo, Question } from '../QuizStructure'
 
-let info1: QuizInfo = {title:'Monty Python', attempted:false, desc:'Can you make it over the bridge?'};
-let questions1: Question[] = [{question: "What is the carrying capacity of a european swallow?", options: ["1 coconut", "50 grams"], answerKey: 0}];
-
-let quizes: Quiz[] = [new Quiz(info1, questions1)];
+import '../output.css'
 
 export const QuizContainer =() => {
     return (

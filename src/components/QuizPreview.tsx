@@ -1,4 +1,4 @@
-import { Quiz } from '../QuizStructure.tsx'
+import { Quiz } from '../data/QuizStructure.tsx'
 import { useNavigate } from "react-router-dom";
 
 import '../output.css'
@@ -12,7 +12,6 @@ export const QuizPreview = (props: {quiz: Quiz}) => {
     } else {
         attemptedMessage = 'Unattemped';
     }
-
     const navigate = useNavigate();
     const goToQuiz = () => {
         navigate('quiz', {state: {quiz}});

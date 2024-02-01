@@ -1,6 +1,8 @@
-import { Header } from '../components/Header'
-import { QuizBox } from '../components/QuizBox'
 import { useLocation } from "react-router-dom";
+
+import { Header } from '../components/Header'
+import { ContentBox } from '../components/ContentBox'
+import { QuizContent } from '../components/QuizContent'
 
 export const QuizPage = () => {
     const {state} = useLocation()
@@ -8,7 +10,7 @@ export const QuizPage = () => {
     return (
         <>
             <Header />
-            <QuizBox quiz={state.quiz}/>
+            <ContentBox children={<QuizContent quiz={state.quiz} />}/>
         </>
     );
 }

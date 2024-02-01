@@ -562,10 +562,6 @@ button:hover {
   position: absolute;
 }
 
-.relative {
-  position: relative;
-}
-
 .sticky {
   position: sticky;
 }
@@ -578,16 +574,6 @@ button:hover {
 .inset-y-28 {
   top: 7rem;
   bottom: 7rem;
-}
-
-.inset-y-16 {
-  top: 4rem;
-  bottom: 4rem;
-}
-
-.inset-y-20 {
-  top: 5rem;
-  bottom: 5rem;
 }
 
 .bottom-1\/4 {
@@ -606,6 +592,16 @@ button:hover {
   z-index: 0;
 }
 
+.my-10 {
+  margin-top: 2.5rem;
+  margin-bottom: 2.5rem;
+}
+
+.my-5 {
+  margin-top: 1.25rem;
+  margin-bottom: 1.25rem;
+}
+
 .flex {
   display: flex;
 }
@@ -618,8 +614,24 @@ button:hover {
   height: 3.5rem;
 }
 
+.h-16 {
+  height: 4rem;
+}
+
+.h-20 {
+  height: 5rem;
+}
+
 .h-28 {
   height: 7rem;
+}
+
+.h-64 {
+  height: 16rem;
+}
+
+.h-96 {
+  height: 24rem;
 }
 
 .h-auto {
@@ -628,26 +640,6 @@ button:hover {
 
 .h-full {
   height: 100%;
-}
-
-.h-96 {
-  height: 24rem;
-}
-
-.h-20 {
-  height: 5rem;
-}
-
-.h-32 {
-  height: 8rem;
-}
-
-.h-16 {
-  height: 4rem;
-}
-
-.h-64 {
-  height: 16rem;
 }
 
 .w-64 {
@@ -674,10 +666,6 @@ button:hover {
   justify-items: start;
 }
 
-.justify-items-center {
-  justify-items: center;
-}
-
 .overflow-auto {
   overflow: auto;
 }
@@ -701,29 +689,25 @@ button:hover {
   --tw-gradient-to: transparent var(--tw-gradient-to-position);
 }
 
-.object-bottom {
-  -o-object-position: bottom;
-     object-position: bottom;
-}
-
 .p-1 {
   padding: 0.25rem;
-}
-
-.p-5 {
-  padding: 1.25rem;
-}
-
-.p-10 {
-  padding: 2.5rem;
 }
 
 .p-3 {
   padding: 0.75rem;
 }
 
+.p-5 {
+  padding: 1.25rem;
+}
+
 .align-bottom {
   vertical-align: bottom;
+}
+
+.text-2xl {
+  font-size: 1.5rem;
+  line-height: 2rem;
 }
 
 .text-4xl {
@@ -734,11 +718,6 @@ button:hover {
 .text-6xl {
   font-size: 3.75rem;
   line-height: 1;
-}
-
-.text-2xl {
-  font-size: 1.5rem;
-  line-height: 2rem;
 }
 
 .font-medium {
@@ -782,4 +761,8 @@ button:hover {
   padding: 0.5rem;
   --tw-drop-shadow: drop-shadow(0 10px 8px rgb(0 0 0 / 0.04)) drop-shadow(0 4px 3px rgb(0 0 0 / 0.1));
   filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
+}
+
+ul li {
+  margin-bottom: 10px;
 }
