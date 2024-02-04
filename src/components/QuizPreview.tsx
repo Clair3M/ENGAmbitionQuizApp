@@ -7,7 +7,7 @@ export const QuizPreview = (props: {quiz: Quiz}) => {
     const quiz = props.quiz;
     const info = quiz.info;
     let attemptedMessage;
-    if (info.attempted) {
+    if (quiz.info.attempted == true) {
         attemptedMessage = 'Best Attempt: ' + (props.quiz.getHighScore() * 100).toString() + '%';
     } else {
         attemptedMessage = 'Unattemped';
@@ -16,7 +16,6 @@ export const QuizPreview = (props: {quiz: Quiz}) => {
     const goToQuiz = () => {
         navigate('quiz', {state: {quiz}});
     }
-
     return (
         <div className='w-preview max-w-19/20 h-auto p-5'>
             <div className="content-box w-full h-full">

@@ -12,14 +12,25 @@ export const QuizContent = (props: {quiz:Quiz}) => {
 
     const navigate = useNavigate();
     const goToResults = () => {
-        navigate('/results');
+        const score = quiz.highScore
+        navigate('/results', {state: {score}});
+    }
+    const whyWontMethodsWork = (quiz: Quiz) => {
+        let correct = 0;
+        quiz.info.attempted = true;
+        for (let i = 0; i < quiz.numQuestions; i++) {
+            if (quiz.questions[i].answerKey == quiz.answers[i]) {
+                correct++;
+            }
+        }
+        quiz.highScore = correct / quiz.numQuestions;
     }
     const nextQuestion = (e: FormEvent) => {
         e.preventDefault();
         quiz.answers[quiz.currentQuestion] = +option;
         console.log(quiz.answers);
         if (quiz.currentQuestion >= quiz.numQuestions-1) {
-            quiz.finishQuiz();
+            whyWontMethodsWork(quiz);
             console.log(quiz.highScore);
             goToResults();
         }
@@ -45,7 +56,7 @@ export const QuizContent = (props: {quiz:Quiz}) => {
                     </label>
                     ))}
                 </div>
-                <div className='p-3 w-full h-20 items-'>
+                <div className='p-3 w-full h-20'>
                     <button type='submit' value='next'>next</button>
                 </div>
             </form>

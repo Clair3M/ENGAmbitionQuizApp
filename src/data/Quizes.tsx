@@ -10,7 +10,7 @@ let questions1: Question[] = [
 let info2: QuizInfo = {title:'Bonus Links', attempted:false, desc:'Can you distinguish Link names from random objects?'};
 let questions2: Question[] = [
     {question: "What is the name of the Link from BOTW?", options: ["Slate", "Wild", "Moss", "Sheik"], answerKey: 0},
-    {question: "What is the name of the Link from Skyward Sword?", options: ["Sword", "Sky", "Loft", "Motion"], answerKey: 3},
+    {question: "What is the name of the Link from Skyward Sword?", options: ["Sword", "Sky", "Loft", "Motion"], answerKey: 2},
     {question: "Who is just a little guy?", options: ["Mini", "Wake", "Mask", "all of the above"], answerKey: 3},
 ];
 
