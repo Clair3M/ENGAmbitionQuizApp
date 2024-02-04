@@ -6,7 +6,6 @@ import { QuizContent } from '../components/QuizContent'
 
 export const QuizPage = () => {
     const {state} = useLocation()
-
     return (
         <>
             <Header />

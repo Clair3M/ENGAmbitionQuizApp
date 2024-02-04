@@ -28,36 +28,58 @@ export const QuizContent = (props: {quiz:Quiz}) => {
     const nextQuestion = (e: FormEvent) => {
         e.preventDefault();
         quiz.answers[quiz.currentQuestion] = +option;
-        console.log(quiz.answers);
         if (quiz.currentQuestion >= quiz.numQuestions-1) {
             whyWontMethodsWork(quiz);
-            console.log(quiz.highScore);
             goToResults();
         }
         quiz.currentQuestion += 1;
         setQuestion(quiz.questions[quiz.currentQuestion]);
     }
+    const previousQuestion = (e: FormEvent) => {
+        e.preventDefault();
+        if (quiz.currentQuestion > 0) {
+            quiz.currentQuestion -= 1;
+            setQuestion(quiz.questions[quiz.currentQuestion]);
+        }
+    }
+    const NavButtons = () => {
+        let nextButtonText = 'next';
+        if (quiz.currentQuestion == quiz.numQuestions-1) {
+            nextButtonText = 'submit';
+        }
+        const nextButton = <button type='submit' value='next' className='bg-green-200'>{nextButtonText}</button>;
+        const previousButton = <button onClick={previousQuestion}>previous</button>;
+        let stuff = <></>;
+        if (quiz.currentQuestion == 0) {
+            stuff = <>{nextButton}</>;
+        } else {
+            stuff = <>{previousButton} {nextButton}</>;
+        }
+        return (
+            stuff
+        )
+    }
 
     return (
         <>
-            <div className='p-3 w-full h-16 text-2xl font-medium'>
+            <div className='p-3 w-full h-24 text-2xl font-medium overflow-hidden'>
                 <h1>{question.question}</h1>
             </div>
             <form method='post' onSubmit={(e) => nextQuestion(e)}>
-                <div className='p-3 w-full h-64 flex flex-col justify-center'>
+                <div className='p-3 w-full h-52 flex flex-col justify-center overflow-scroll'>
                     {question.options.map((option, index) => (
                         <label><input
                         type="radio"
                         name="options"
-                        className='my-5'
+                        className='my-4'
                         value={index}
                         onChange={(e) => setSelected(e.currentTarget.value)} 
                         required/> {option}
                     </label>
                     ))}
                 </div>
-                <div className='p-3 w-full h-20'>
-                    <button type='submit' value='next'>next</button>
+                <div className='p-3 w-full h-20 flex justify-center items-center'>
+                    <NavButtons />
                 </div>
             </form>
         </>
