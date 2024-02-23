@@ -15,6 +15,24 @@ export const QuizContent = (props: {quiz:Quiz}) => {
         const score = quiz.highScore
         navigate('/results', {state: {score}});
     }
+    const NavButtons = () => {
+        let nextButtonText = 'next';
+        if (quiz.currentQuestion == quiz.numQuestions-1) {
+            nextButtonText = 'submit';
+        }
+        const nextButton = <button type='submit' value='next' className='right-5 bg-green-200'>{nextButtonText}</button>;
+        const previousButton = <button onClick={previousQuestion}>previous</button>;
+        let stuff = <></>;
+        if (quiz.currentQuestion == 0) {
+            stuff = <>{nextButton}</>;
+        } else {
+            stuff = <>{previousButton} {nextButton}</>;
+        }
+        return (
+            stuff
+        )
+    }
+
     const whyWontMethodsWork = (quiz: Quiz) => {
         let correct = 0;
         quiz.info.attempted = true;
@@ -42,23 +60,6 @@ export const QuizContent = (props: {quiz:Quiz}) => {
             setQuestion(quiz.questions[quiz.currentQuestion]);
         }
     }
-    const NavButtons = () => {
-        let nextButtonText = 'next';
-        if (quiz.currentQuestion == quiz.numQuestions-1) {
-            nextButtonText = 'submit';
-        }
-        const nextButton = <button type='submit' value='next' className='bg-green-200'>{nextButtonText}</button>;
-        const previousButton = <button onClick={previousQuestion}>previous</button>;
-        let stuff = <></>;
-        if (quiz.currentQuestion == 0) {
-            stuff = <>{nextButton}</>;
-        } else {
-            stuff = <>{previousButton} {nextButton}</>;
-        }
-        return (
-            stuff
-        )
-    }
 
     return (
         <>
@@ -78,7 +79,7 @@ export const QuizContent = (props: {quiz:Quiz}) => {
                     </label>
                     ))}
                 </div>
-                <div className='p-3 w-full h-20 flex justify-center items-center'>
+                <div className='p-3 w-full h-20'>
                     <NavButtons />
                 </div>
             </form>
